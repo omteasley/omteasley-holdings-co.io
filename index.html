@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O. M. TEASLEY Holdings — Investments & Partnerships</title>
+  <meta name="description" content="O. M. TEASLEY Holdings is a diversified investment and management company focused on finance, real estate, and strategic partnerships." />
+  <meta property="og:title" content="O. M. TEASLEY Holdings" />
+  <meta property="og:description" content="Diversified investments • Strategic partnerships • Long-term value creation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/social-preview.png" />
+  <meta name="theme-color" content="#0B4FA2" />
+  <link rel="icon" href="/favicon.png" />
+  <style>
+    :root{
+      /* Corporate blue palette */
+      --blue-900:#0A3871; /* deep navy */
+      --blue-800:#0B4FA2; /* primary */
+      --blue-700:#1666C5; /* hover */
+      --blue-100:#E7F0FB; /* light tint */
+      --ink-900:#0F172A; /* near-black */
+      --ink-700:#334155; /* body text */
+      --ink-500:#64748B; /* captions */
+      --surface:#FFFFFF; /* cards */
+      --success:#1D8348;
+      --warning:#B9770E;
+      --radius:16px;
+      --shadow:0 8px 24px rgba(2,24,62,.12);
+      --maxw:1120px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink-900); background:#F7FAFF; line-height:1.55;
+    }
+    a{color:var(--blue-800); text-decoration:none}
+    a:hover{color:var(--blue-700)}
+    .container{max-width:var(--maxw); margin-inline:auto; padding:0 24px}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(150%) blur(8px);
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.7));
+      border-bottom:1px solid rgba(11,79,162,.12);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
+    .brand-logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, var(--blue-800), var(--blue-700)); display:grid; place-items:center; color:#fff; font-weight:800}
+    nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0}
+    nav a{font-weight:600; color:var(--ink-700)}
+    nav a:hover{color:var(--blue-800)}
+    .cta{display:inline-block; padding:10px 16px; border-radius:10px; background:var(--blue-800); color:#fff; font-weight:700; box-shadow:0 4px 14px rgba(11,79,162,.25)}
+    .cta:hover{background:var(--blue-700)}
+    .menu-btn{display:none; border:0; background:transparent; font-size:22px}
+
+    /* Hero */
+    .hero{
+      position:relative; overflow:hidden; color:#fff;
+      background:radial-gradient(1200px 600px at 80% -10%, rgba(255,255,255,.15), transparent 60%),
+                 linear-gradient(180deg, var(--blue-800), var(--blue-900));
+    }
+    .hero .wrap{display:grid; grid-template-columns: 1.3fr .7fr; gap:48px; padding:96px 0}
+    .eyebrow{text-transform:uppercase; letter-spacing:.22em; font-weight:800; font-size:.8rem; opacity:.9}
+    .h1{font-size: clamp(32px, 5vw, 56px); line-height:1.1; margin:10px 0 16px; font-weight:800}
+    .lead{font-size: clamp(16px, 2.2vw, 20px); opacity:.95; max-width:58ch}
+    .hero-card{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+    .hero-list{margin:0; padding-left:18px}
+    .hero-list li{margin:8px 0}
+    .hero-cta{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
+    .hero-cta .ghost{background:transparent; border:1.5px solid rgba(255,255,255,.7)}
+
+    /* Trust row */
+    .trust{background:#fff; border-bottom:1px solid #EEF2FF}
+    .trust .row{display:flex; gap:28px; justify-content:space-between; align-items:center; padding:18px 0; flex-wrap:wrap}
+    .trust .pill{font-size:.85rem; color:var(--ink-500)}
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-title{font-size: clamp(22px, 3vw, 34px); margin:0 0 12px; letter-spacing:.2px}
+    .muted{color:var(--ink-500)}
+
+    /* Grid cards */
+    .grid{display:grid; gap:22px}
+    .grid.cols-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+    @media (max-width: 980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      nav ul{display:none}
+      .menu-btn{display:block}
+      .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+      .trust .row{gap:12px; justify-content:center}
+    }
+    .card{background:var(--surface); border:1px solid #E6EEF9; border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+    .card h3{margin:4px 0 8px}
+    .badge{display:inline-block; padding:4px 10px; border-radius:999px; font-size:.8rem; background:var(--blue-100); color:var(--blue-800); font-weight:700}
+    .btn{display:inline-block; padding:12px 18px; border-radius:12px; font-weight:800; letter-spacing:.2px}
+    .btn.primary{background:var(--blue-800); color:#fff}
+    .btn.primary:hover{background:var(--blue-700)}
+    .btn.ghost{border:1.5px solid #CBD6EA}
+
+    /* Footer */
+    footer{background:#0B1220; color:#C7D2FE}
+    footer a{color:#C7D2FE}
+    .footer-top{padding:48px 0}
+    .footer-grid{display:grid; gap:22px; grid-template-columns: 2fr 1fr 1fr}
+    .fineprint{font-size:.85rem; color:#A5B4FC}
+    @media (max-width: 900px){.footer-grid{grid-template-columns:1fr}}
+
+    /* Utilities */
+    .space-s{height:8px}
+    .space-m{height:18px}
+    .space-l{height:32px}
+    .center{text-align:center}
+    .right{text-align:right}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">OT</div>
+        <div>O. M. TEASLEY Holdings</div>
+      </div>
+      <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#focus">Focus</a></li>
+          <li><a href="#referrals">Referrals</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#referrals">Apply Now</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container wrap">
+      <div>
+        <div class="eyebrow">Diversified Investments • Strategic Partnerships</div>
+        <h1 class="h1">Long‑term value creation across finance, real estate, and private ventures.</h1>
+        <p class="lead">We invest with discipline, partner with integrity, and operate with transparency. Our mandate is durable growth and aligned incentives for all stakeholders.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#referrals">Explore Referral Programs</a>
+          <a class="btn ghost" href="#about" style="color:#fff; border-color:rgba(255,255,255,.6)">Learn More</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Highlights">
+        <span class="badge">At a glance</span>
+        <ul class="hero-list">
+          <li>Headquarters: Scottsdale, Arizona</li>
+          <li>Holdings company structure • multi‑vertical</li>
+          <li>Operational since 2025</li>
+          <li>Ethics & disclosure first: referral transparency</li>
+        </ul>
+        <div class="space-s"></div>
+        <a class="btn primary" href="#contact">Request a call</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Trust row -->
+  <div class="trust">
+    <div class="container row">
+      <div class="pill">Focused on compliance & clear disclosures</div>
+      <div class="pill">Not investment advice — educational only</div>
+      <div class="pill">Aligned with long‑term investors</div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p class="muted" style="max-width:75ch">O. M. TEASLEY Holdings is a diversified investment and management company focused on building long‑term value. Our portfolio spans public and private equity, financial services partnerships, real estate holdings, and venture investments. We pursue durable strategies, rigorous diligence, and transparent communications.</p>
+    </div>
+  </section>
+
+  <!-- Focus Areas -->
+  <section id="focus" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Core Areas of Focus</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Equity Investments</h3>
+          <p>Public & private markets with disciplined risk management and multi‑factor evaluation.</p>
+        </div>
+        <div class="card">
+          <h3>Financial Services Partnerships</h3>
+          <p>Referral relationships with trusted institutions, prioritizing client experience and security.</p>
+        </div>
+        <div class="card">
+          <h3>Real Estate Holdings</h3>
+          <p>Residential and commercial assets with an emphasis on cash flow and resilience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referrals -->
+  <section id="referrals">
+    <div class="container">
+      <h2 class="section-title">Referral Programs</h2>
+      <p class="muted">Join via our trusted partners to access preferred offers and support our mission. Referral relationships may result in compensation to O. M. TEASLEY Holdings.</p>
+      <div class="space-m"></div>
+      <div class="grid cols-2">
+        <!-- Card 1 -->
+        <div class="card">
+          <span class="badge">Brokerage</span>
+          <h3>SoFi Invest</h3>
+          <p>Commission‑free trading in stocks and ETFs; streamlined mobile platform.</p>
+          <div class="space-s"></div>
+          <a class="btn primary" href="https://YOUR‑SOFI‑REFERRAL‑LINK" target="_blank" rel="noopener">Apply Now</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+          <span class="badge">Brokerage</span>
+          <h3>Fidelity Investments</h3>
+          <p>Trusted platform with robust retirement tools and broad asset access.</p>
+          <div class="space-s"></div>
+          <a class="btn primary" href="https://YOUR‑FIDELITY‑REFERRAL‑LINK" target="_blank" rel="noopener">Apply Now</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <span class="badge">Banking</span>
+          <h3>Ally Bank</h3>
+          <p>High‑yield savings and CDs with intuitive online experience.</p>
+          <div class="space-s"></div>
+          <a class="btn primary" href="https://YOUR‑ALLY‑REFERRAL‑LINK" target="_blank" rel="noopener">Apply Now</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+          <span class="badge">ETF</span>
+          <h3>Vanguard S&P 500 ETF</h3>
+          <p>Low‑cost broad‑market exposure aligned with long‑term wealth building.</p>
+          <div class="space-s"></div>
+          <a class="btn primary" href="https://YOUR‑VANGUARD‑REFERRAL‑LINK" target="_blank" rel="noopener">Apply Now</a>
+        </div>
+      </div>
+      <div class="space-l"></div>
+      <div class="center"><a class="btn ghost" href="#contact">Need help choosing? Contact us</a></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:contact@omteasley.com">contact@omteasley.com</a><br/>Headquarters: Scottsdale, Arizona, USA</p>
+          <div class="space-s"></div>
+          <a class="btn primary" href="mailto:contact@omteasley.com">Request a Call</a>
+        </div>
+        <div class="card">
+          <h3>Schedule</h3>
+          <p>Use our booking link to schedule a quick introduction call.</p>
+          <a class="btn primary" href="https://YOUR‑CALENDLY‑LINK" target="_blank" rel="noopener">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="color:#fff">
+            <div class="brand-logo" aria-hidden="true" style="background:linear-gradient(135deg,#0B4FA2,#1666C5)">OT</div>
+            <div>O. M. TEASLEY Holdings</div>
+          </div>
+          <div class="space-s"></div>
+          <p class="fineprint">O. M. TEASLEY Holdings is not a licensed financial advisor, broker‑dealer, or investment adviser. Information provided is for educational and marketing purposes only and should not be considered financial advice. Referral relationships may result in compensation.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul style="list-style:none; padding:0; margin:8px 0 0">
+            <li><a href="#about">About</a></li>
+            <li><a href="#focus">Focus</a></li>
+            <li><a href="#referrals">Referrals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul style="list-style:none; padding:0; margin:8px 0 0">
+            <li><a href="#" onclick="alert('Add your privacy policy URL')">Privacy</a></li>
+            <li><a href="#" onclick="alert('Add your terms of use URL')">Terms</a></li>
+            <li><a href="#contact">Disclosures</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="space-m"></div>
+      <p class="fineprint">© <span id="year"></span> O. M. TEASLEY Holdings. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
