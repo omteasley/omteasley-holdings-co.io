@@ -1,0 +1,36 @@
+/* Big button variant */
+.btn-xl{font-size:1.1rem;padding:16px 24px;border-radius:14px}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center}
+.modal[aria-hidden="false"]{display:flex}
+.modal__backdrop{position:absolute;inset:0;background:rgba(2,24,62,.55);backdrop-filter:blur(2px)}
+.modal__dialog{position:relative;background:#fff;border-radius:18px;box-shadow:var(--shadow);
+  width:min(640px,92vw);max-height:88vh;overflow:auto;padding:22px}
+.modal__close{position:absolute;top:10px;right:12px;border:0;background:#EEF2FF;color:#0B1220;
+  border-radius:10px;width:34px;height:34px;cursor:pointer;font-size:20px}
+.modal__content h3{margin:6px 0 16px;color:var(--ink-900)}
+.label{font-weight:800;display:block;margin:8px 0}
+.input{width:100%;padding:12px 14px;border:1.5px solid #DBE5F6;border-radius:12px;font-size:1rem}
+.help{margin-top:6px}
+
+/* Steps */
+.steps{display:flex;gap:8px;margin-bottom:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:#DBE5F6}
+.step.active ~ .dot{} /* (visual grouping only) */
+
+.step{display:none}
+.step.active{display:block}
+
+/* Choices */
+.choices{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px}
+.choice{border:1.5px solid #DBE5F6;background:#fff;color:var(--ink-900);
+  padding:10px 14px;border-radius:14px;font-weight:700;cursor:pointer}
+.choice.active,.choice:hover{border-color:var(--blue-700);color:var(--blue-800);box-shadow:0 6px 18px rgba(11,79,162,.15)}
+
+.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:8px}
+.checkbox{display:flex;gap:10px;align-items:flex-start}
+.checkbox input{margin-top:3px}
+
+/* Disable look for aria-disabled links */
+[aria-disabled="true"]{pointer-events:none;opacity:.6}
