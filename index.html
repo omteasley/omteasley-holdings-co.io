@@ -1,130 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>O. M. TEASLEY Holdings</title>
-  <meta name="description" content="Choose your path: Holdings & Investors or Loan Offer Referrals."/>
-  <meta name="theme-color" content="#0B4FA2"/>
-  <link rel="icon" href="favicon.png"/>
-  <link rel="stylesheet" href="assets/css/main.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O.M. TEASLEY Holdings</title>
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Splash-specific tweaks (kept small; main styles live in main.css) */
-    .splash {
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(1200px 600px at 80% -10%, rgba(255,255,255,.14), transparent 60%),
-        linear-gradient(180deg, var(--blue-800), var(--blue-900));
-      color: #fff;
-      padding: 24px;
-    }
-    .splash-card {
-      width: min(980px, 94vw);
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.25);
-      box-shadow: var(--shadow);
-      border-radius: 22px;
-      padding: clamp(18px, 3vw, 28px);
-      backdrop-filter: saturate(140%) blur(6px);
-    }
-    .splash-header {
-      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
-    }
-    .splash-title {
-      font-weight: 800; letter-spacing: .2px; font-size: clamp(18px, 2.2vw, 22px);
-    }
-    .splash-sub {
-      color: rgba(255,255,255,.9);
-      margin: 6px 0 18px;
-      font-size: clamp(14px, 1.8vw, 16px);
-    }
-    .split {
-      display: grid; gap: 16px;
-      grid-template-columns: 1fr 1fr;
-    }
-    .option {
-      display: grid; gap: 12px; padding: 20px; border-radius: 18px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.22);
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-      text-decoration: none; color: inherit;
-    }
-    .option:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.16);
-      border-color: rgba(255,255,255,.35);
-    }
-    .option h2 { margin: 4px 0 2px; font-size: clamp(18px, 2.2vw, 22px) }
-    .option p  { margin: 0; color: rgba(255,255,255,.92) }
-    .option .btn {
-      justify-self: start;
-      background: #fff; color: var(--blue-800);
-      border-radius: 12px; padding: 10px 14px; font-weight: 800;
-      box-shadow: 0 6px 18px rgba(0,0,0,.18);
-    }
-    .option .btn:hover { background: #F3F6FF; }
-    .brand-logo-big{
-      width: 44px; height: 44px; border-radius: 12px;
-      background: linear-gradient(135deg, #0B4FA2, #1666C5);
-      display: grid; place-items: center; color:#fff; font-weight: 900;
-    }
-    .splash-footer {
-      margin-top: 14px; display:flex; gap:12px; flex-wrap: wrap; align-items:center; justify-content: space-between;
-      color: rgba(255,255,255,.85);
-      font-size: 14px;
-    }
-    .splash-links a { color:#fff; text-decoration: underline; text-underline-offset: 3px; }
-    @media (max-width: 800px) {
-      .split { grid-template-columns: 1fr; }
-    }
+    .split{min-height:100vh;display:grid;place-items:center;background:
+      linear-gradient(180deg,#eef5ff,transparent 35%),radial-gradient(1200px 600px at 80% -10%, rgba(11,79,162,.14), transparent 60%)}
+    .split-card{max-width:680px;width:clamp(300px,90vw,680px);background:#fff;border:1px solid #E6EEF9;border-radius:20px;box-shadow:var(--shadow);padding:28px}
+    .split h1{margin:0 0 8px}
+    .choices{display:grid;gap:14px;margin-top:16px}
+    .choice{display:flex;justify-content:space-between;align-items:center;border:1px solid #E6EEF9;border-radius:14px;padding:14px 16px;background:#fff}
+    .choice strong{font-size:1.05rem}
   </style>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+        <div class="brand-logo" aria-hidden="true">OT</div>
+        <div>O. M. TEASLEY Holdings</div>
+      </a>
+    </div>
+  </header>
 
-  <main class="splash">
-    <div class="splash-card" role="group" aria-labelledby="siteTitle" aria-describedby="siteSub">
-      <!-- Clickable logo that always returns home -->
-      <div class="splash-header">
-        <a href="/" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none">
-          <div class="brand-logo-big" aria-hidden="true">OT</div>
-          <div class="splash-title" id="siteTitle">O. M. TEASLEY Holdings</div>
-        </a>
-      </div>
-
-      <p class="splash-sub" id="siteSub">Please choose where you’d like to go.</p>
-
-      <div class="split" role="list">
-        <!-- Option A: Holdings & Investors -->
-        <a class="option" href="investors/" role="listitem" aria-label="Holdings and Investors">
-          <div>
-            <h2>Holdings & Investors</h2>
-            <p>Overview, strategy, governance, and partnership information.</p>
-          </div>
-          <span class="btn" aria-hidden="true">Enter</span>
-        </a>
-
-        <!-- Option B: Loan Offer Referrals -->
-        <a class="option" href="offers/" role="listitem" aria-label="Loan Offer Referrals">
-          <div>
-            <h2>Loan Offer Referrals</h2>
-            <p>Compare partner offers for auto, home, business, personal, and student—apply on partner sites.</p>
-          </div>
-          <span class="btn" aria-hidden="true">Explore Offers</span>
-        </a>
-      </div>
-
-      <div class="splash-footer">
-        <div>We’re a referral partner, not a lender or broker. We may receive a referral fee.</div>
-        <div class="splash-links">
-          <a href="privacy.html">Privacy</a> ·
-          <a href="terms.html">Terms</a> ·
-          <a href="disclosures.html">Disclosures</a>
-        </div>
+  <main class="split">
+    <div class="split-card">
+      <h1>Welcome</h1>
+      <p class="muted">Choose where you’d like to go:</p>
+      <div class="choices">
+        <a class="choice" href="home.html"><strong>Investors & Holdings</strong><span>→</span></a>
+        <a class="choice" href="offers.html"><strong>Explore Financial Offers</strong><span>→</span></a>
       </div>
     </div>
   </main>
 
+  <footer>
+    <div class="container footer-top">
+      <p class="fineprint">© <span id="year"></span> O. M. TEASLEY Holdings.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
