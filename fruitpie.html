@@ -1,48 +1,70 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fruit Pie — Meme Coin | O. M. TEASLEY Holdings</title>
-  <link href="styles.css" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FruitPie Meme Coin — O. M. TEASLEY</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-          <stop stop-color="#0B4FA2"/><stop offset="1" stop-color="#1666C5"/>
-        </linearGradient></defs>
-        <rect width="48" height="48" rx="12" fill="url(#g)"/>
-        <text x="24" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="#fff">OT</text>
-      </svg>
-      <span class="brand-text">O. M. TEASLEY Holdings</span>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Back to start">
+      <div class="brand-badge">OT</div>
+      <div class="brand-name">O. M. TEASLEY Holdings</div>
     </a>
-    <a class="btn-pill" href="home.html">Back to Investors</a>
-  </header>
-
-  <section class="hero compact">
-    <div class="container">
-      <h1 style="margin:0 0 6px">Fruit Pie — Meme Coin</h1>
-      <p class="lead">A playful, community-driven token experiment. Not investment advice.</p>
+    <div class="nav-actions">
+      <a class="btn" href="home.html">Investors</a>
+      <a class="btn" href="loans.html">Loans</a>
+      <a class="btn primary" href="#learn">Read Docs</a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <main class="container">
-    <div class="grid cards-2">
+<section class="hero">
+  <div class="container hero-wrap">
+    <div>
+      <h1 class="hero-title">FruitPie — Meme Coin</h1>
+      <p class="hero-lead">A playful, community-driven token experiment. Not an investment solicitation. Extremely volatile; may go to zero.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#learn">Learn more</a>
+        <a class="btn ghost" href="index.html" style="color:#fff;border-color:rgba(255,255,255,.6)">Back</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <span class="badge">Highlights</span>
+      <ul style="margin:10px 0 0 18px">
+        <li>Community + education</li>
+        <li>Transparent tokenomics (publish details)</li>
+        <li>No promises of profit</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="learn" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title">One-Pager</h2>
+    <div class="grid cols-2">
       <div class="card">
-        <h3>Summary</h3>
-        <ul>
-          <li>Purpose: community + education + fun</li>
-          <li>Risk: extremely high; may go to zero</li>
-          <li>Not a security; no promises or expectations of profit</li>
-          <li>DYOR: read docs before doing anything</li>
-        </ul>
-        <a class="btn primary" href="#" onclick="alert('Add your Fruit Pie whitepaper / Notion / doc link')">Read Docs</a>
+        <h3>About</h3>
+        <p>FruitPie is a lightweight, entertainment-first crypto exploration we use for learning. The point is community and transparency.</p>
       </div>
       <div class="card">
         <h3>Get Involved</h3>
-        <ul>
-          <li>Follow updates on X/Discord/Telegram</li>
-          <
+        <p>Join the community and follow updates. Add your Discord / X link below.</p>
+        <a class="btn" href="#" onclick="alert('Add your community link')">Join Community</a>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:14px">Disclaimer: Digital assets are risky. Do your own research.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <p class="fineprint">© <span id="y"></span> O. M. TEASLEY Holdings.</p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
