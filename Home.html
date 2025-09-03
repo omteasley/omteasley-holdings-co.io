@@ -1,37 +1,91 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Investors & Holdings — O. M. TEASLEY</title>
-  <meta name="description" content="Diversified investments, real estate holdings, and strategic partnerships focused on long-term value creation." />
-  <link rel="icon" href="favicon.png" />
-  <link href="styles.css" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>O. M. TEASLEY — Investors & Holdings</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 <body>
-  <!-- Header -->
-  <header class="topbar">
-    <a class="brand" href="index.html" id="brandHome">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-          <stop stop-color="#0B4FA2"/><stop offset="1" stop-color="#1666C5"/>
-        </linearGradient></defs>
-        <rect width="48" height="48" rx="12" fill="url(#g)"/>
-        <text x="24" y="29" text-anchor="middle" font-size="18" font-weight="800" fill="#fff">OT</text>
-      </svg>
-      <span class="brand-text">O. M. TEASLEY Holdings</span>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Back to start">
+      <div class="brand-badge">OT</div>
+      <div class="brand-name">O. M. TEASLEY Holdings</div>
     </a>
-    <nav class="top-nav">
-      <a href="#overview">Overview</a>
-      <a href="#focus">Focus</a>
-      <a href="#referrals">Referrals</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn-pill" href="loans.html">Explore Offers</a>
-  </header>
+    <div class="nav-actions">
+      <a class="btn" href="#focus">Focus</a>
+      <a class="btn" href="disclosures.html">Disclosures</a>
+      <a class="btn primary" href="loans.html">Explore Offers</a>
+    </div>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section class="hero" id="overview">
-    <div class="container">
-      <div
+<section class="hero">
+  <div class="container hero-wrap">
+    <div>
+      <div class="muted" style="color:#DCE7FF;text-transform:uppercase;letter-spacing:.22em;font-weight:800">Diversified Investments • Strategic Partnerships</div>
+      <h1 class="hero-title">Long-term value creation across finance, real estate, and private ventures.</h1>
+      <p class="hero-lead">We invest with discipline, partner with integrity, and operate with transparency. Our mandate is durable growth and aligned incentives for all stakeholders.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="loans.html">Explore Referral Programs</a>
+        <a class="btn ghost" href="#about" style="color:#fff;border-color:rgba(255,255,255,.6)">Learn More</a>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Highlights">
+      <span class="badge">At a glance</span>
+      <ul style="margin:10px 0 0 18px">
+        <li>Headquarters: Scottsdale, Arizona</li>
+        <li>Holdings company structure • multi-vertical</li>
+        <li>Operational since 2025</li>
+        <li>Ethics &amp; disclosure first: referral transparency</li>
+      </ul>
+      <div class="carousel" style="margin-top:14px">
+        <img class="active" src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?q=80&w=1171&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1171&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop" alt="">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">Overview &amp; Strategy</h2>
+    <p class="muted" style="max-width:75ch">Durable growth through equity investments, financial partnerships, and real estate holdings with an emphasis on transparency and aligned incentives.</p>
+  </div>
+</section>
+
+<section id="focus" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title">Core Areas of Focus</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>Equity</h3><p>Public &amp; private strategies with disciplined risk management.</p></div>
+      <div class="card"><h3>Financial Services</h3><p>Channel &amp; referral relationships with trusted institutions.</p></div>
+      <div class="card"><h3>Real Estate</h3><p>Residential &amp; commercial assets with an emphasis on resilience.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fruitpie">
+  <div class="container">
+    <h2 class="section-title">FruitPie Meme Coin (experimental)</h2>
+    <p class="muted" style="max-width:75ch">A playful, community-driven crypto experiment. Not investment advice. Learn more on the dedicated page.</p>
+    <div class="hero-cta"><a class="btn" href="fruitpie.html">FruitPie details</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <p class="fineprint">© <span id="y"></span> O. M. TEASLEY Holdings. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const imgs=[...document.querySelectorAll('.carousel img')];
+  let i=0; setInterval(()=>{imgs[i].classList.remove('active'); i=(i+1)%imgs.length; imgs[i].classList.add('active');}, 3500);
+</script>
+</body>
+</html>
