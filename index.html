@@ -3,45 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O.M. TEASLEY Holdings</title>
-  <link rel="icon" href="/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .split{min-height:100vh;display:grid;place-items:center;background:
-      linear-gradient(180deg,#eef5ff,transparent 35%),radial-gradient(1200px 600px at 80% -10%, rgba(11,79,162,.14), transparent 60%)}
-    .split-card{max-width:680px;width:clamp(300px,90vw,680px);background:#fff;border:1px solid #E6EEF9;border-radius:20px;box-shadow:var(--shadow);padding:28px}
-    .split h1{margin:0 0 8px}
-    .choices{display:grid;gap:14px;margin-top:16px}
-    .choice{display:flex;justify-content:space-between;align-items:center;border:1px solid #E6EEF9;border-radius:14px;padding:14px 16px;background:#fff}
-    .choice strong{font-size:1.05rem}
-  </style>
+  <title>O. M. TEASLEY Holdings</title>
+  <link rel="icon" href="favicon.png" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
-        <div class="brand-logo" aria-hidden="true">OT</div>
-        <div>O. M. TEASLEY Holdings</div>
-      </a>
-    </div>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+            <stop stop-color="#0B4FA2"/><stop offset="1" stop-color="#1666C5"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#g)"/>
+        <text x="24" y="29" text-anchor="middle" font-family="ui-sans-serif,system-ui"
+              font-size="18" font-weight="800" fill="#fff">OT</text>
+      </svg>
+      <span class="brand-text">O. M. TEASLEY Holdings</span>
+    </a>
   </header>
 
-  <main class="split">
-    <div class="split-card">
-      <h1>Welcome</h1>
-      <p class="muted">Choose where you’d like to go:</p>
-      <div class="choices">
-        <a class="choice" href="home.html"><strong>Investors & Holdings</strong><span>→</span></a>
-        <a class="choice" href="offers.html"><strong>Explore Financial Offers</strong><span>→</span></a>
+  <!-- Split landing -->
+  <main class="split-landing">
+    <section class="landing-wrap">
+      <div class="landing-card">
+        <h1 style="margin:0 0 6px">Welcome</h1>
+        <p class="muted" style="margin:0 0 18px">Choose where you’d like to go:</p>
+
+        <!-- Path 1 -->
+        <a class="cta-row" href="home.html">
+          <div>
+            <div class="cta-title">Investors &amp; Holdings</div>
+            <div class="cta-sub">Overview, strategy, portfolio focus, and disclosures.</div>
+          </div>
+          <div class="cta-arrow">→</div>
+        </a>
+
+        <!-- Path 2 -->
+        <a class="cta-row" href="loans.html">
+          <div>
+            <div class="cta-title">Explore Financial Offers</div>
+            <div class="cta-sub">Loans, banking &amp; brokerage referrals (third-party partners).</div>
+          </div>
+          <div class="cta-arrow">→</div>
+        </a>
       </div>
-    </div>
+    </section>
   </main>
 
-  <footer>
-    <div class="container footer-top">
-      <p class="fineprint">© <span id="year"></span> O. M. TEASLEY Holdings.</p>
-    </div>
+  <footer class="mini-foot">
+    © <span id="year"></span> O. M. TEASLEY Holdings
   </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
