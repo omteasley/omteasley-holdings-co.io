@@ -8,46 +8,55 @@
 </head>
 <body>
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Back to start">
-      <div class="brand-badge">OT</div>
-      <div class="brand-name">O. M. TEASLEY Holdings</div>
+  <div class="container nav" style="justify-content:center; text-align:center">
+    <a class="brand" href="index.html" aria-label="Back to start" style="flex-direction:column; gap:8px">
+      <div class="brand-badge" style="width:64px; height:64px; font-size:22px;">OT</div>
+      <div class="brand-name" style="font-size:20px">O. M. TEASLEY Holdings</div>
     </a>
-    <div class="nav-actions">
-      <a class="btn" href="home.html">Investors</a>
-      <a class="btn" href="loans.html">Loans</a>
-      <a class="btn primary" href="fruitpie.html">FruitPie</a>
-    </div>
   </div>
 </header>
 
 <main>
-  <section class="choice-wrap">
-    <div class="container">
-      <h1 class="section-title">Welcome</h1>
-      <p class="muted">Choose where you’d like to go:</p>
+  <section class="choice-wrap" style="padding:80px 0">
+    <div class="container" style="max-width:800px; text-align:center">
+      <h1 class="section-title">Choose Your Path</h1>
+      <p class="muted" style="margin-bottom:40px">Select an area to explore.</p>
 
-      <a class="choice" href="home.html">
-        <h3>Investors &amp; Holdings</h3>
-        <p>Company overview, strategy, focus areas, and disclosures.</p>
-      </a>
+      <div class="grid cols-3">
+        <!-- Investors -->
+        <a class="choice" href="home.html" style="text-align:center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <path d="M3 13h4v8H3v-8Zm7-4h4v12h-4V9Zm7-6h4v18h-4V3Z" fill="currentColor"/>
+          </svg>
+          <h3 style="margin:12px 0 6px">Investors</h3>
+          <p class="muted" style="font-size:0.9rem">Overview, strategy, and disclosures</p>
+        </a>
 
-      <a class="choice" href="loans.html">
-        <h3>Loans &amp; Referrals</h3>
-        <p>Business, personal, student, mortgage, and more — third-party partners.</p>
-      </a>
+        <!-- Loans -->
+        <a class="choice" href="loans.html" style="text-align:center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <path d="M3 7h18v10H3V7Zm2 2v6h14V9H5Zm3 9h8v2H8v-2Z" fill="currentColor"/>
+          </svg>
+          <h3 style="margin:12px 0 6px">Loans</h3>
+          <p class="muted" style="font-size:0.9rem">Business, personal, mortgage & more</p>
+        </a>
 
-      <a class="choice" href="fruitpie.html">
-        <h3>FruitPie Meme Coin</h3>
-        <p>Lightweight, community-driven experiment. Not investment advice.</p>
-      </a>
+        <!-- FruitPie -->
+        <a class="choice" href="fruitpie.html" style="text-align:center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="currentColor"/>
+          </svg>
+          <h3 style="margin:12px 0 6px">FruitPie</h3>
+          <p class="muted" style="font-size:0.9rem">Community-driven meme coin</p>
+        </a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <p class="fineprint">© <span id="y"></span> O. M. TEASLEY Holdings. All rights reserved.</p>
+  <div class="container footer-inner" style="text-align:center">
+    <p class="fineprint">© <span id="y"></span> O. M. TEASLEY Holdings</p>
   </div>
 </footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
