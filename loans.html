@@ -6,6 +6,30 @@
   <title>Loans & Referrals — O. M. TEASLEY</title>
   <link rel="stylesheet" href="assets/css/styles.css"/>
   <meta name="description" content="Explore or apply for loans via our trusted partner.">
+
+  <style>
+    /* Custom Apply Now button */
+    .btn-apply {
+      display:inline-block;
+      min-width:180px;
+      text-align:center;
+      padding:14px 24px;
+      border-radius:12px;
+      font-weight:700;
+      letter-spacing:.3px;
+      background:linear-gradient(135deg, #0B4FA2, #1666C5);
+      color:#fff;
+      border:none;
+      box-shadow:0 4px 12px rgba(11,79,162,.25);
+      transition:all .25s ease;
+    }
+    .btn-apply:hover {
+      background:rgba(11,79,162,0.75);
+      backdrop-filter: blur(6px);
+      color:#fff;
+      transform:translateY(-2px);
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -18,7 +42,6 @@
 </header>
 
 <main>
-  <!-- Simple centered hero like Vanguard -->
   <section class="choice-wrap" style="padding:80px 0">
     <div class="container" style="max-width:780px; text-align:center">
       <h1 class="section-title">Loans &amp; Referrals</h1>
@@ -29,16 +52,16 @@
 
       <!-- Two big buttons -->
       <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap">
-        <!-- Learn More: your LANDING page -->
+        <!-- Learn More -->
         <a class="btn" style="min-width:180px; text-align:center"
-           href="https://app.advancefundsnetwork.com/partner-landing/hwqwL4CivjfEnHAIeVZxfgzJK1h1"
+           href="YOUR-LANDING-PAGE-LINK"
            target="_blank" rel="noopener">
           Learn More
         </a>
 
-        <!-- Apply Now: TEMP points to landing until you give me the application URL -->
-        <a class="btn primary" style="min-width:180px; text-align:center"
-           href="https://app.advancefundsnetwork.com/partner-landing/hwqwL4CivjfEnHAIeVZxfgzJK1h1"
+        <!-- Apply Now -->
+        <a class="btn-apply"
+           href="YOUR-APPLICATION-LINK"
            target="_blank" rel="noopener">
           Apply Now
         </a>
@@ -48,7 +71,7 @@
         Note: You’ll be taken to our partner’s secure website to continue.
       </p>
 
-      <!-- Optional: quick “categories” row, purely informational -->
+      <!-- Optional: loan categories row -->
       <div class="grid cols-3" style="margin-top:30px">
         <div class="choice" style="padding:18px">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -81,3 +104,4 @@
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
