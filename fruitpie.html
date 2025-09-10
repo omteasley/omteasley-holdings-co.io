@@ -1,71 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FruitPie — O. M. TEASLEY Holdings</title>
-  <meta name="description" content="FruitPie Coin funds and advances the Institutional Trading Bot. Every transaction supports its development.">
+  <meta name="description" content="FruitPie Coin funds and advances the Institutional Trading Bot. Every transaction supports its development." />
+  <meta name="theme-color" content="#ff5757" />
   <link rel="stylesheet" href="assets/css/styles.css"/>
 
-  <!-- FruitPie-only styles (scoped) -->
+  <!-- FruitPie-only styles: SOLID colors, no gradients/transparency -->
   <style>
     :root{
       --fp-coral:#ff5757;   /* Coral Red */
       --fp-salmon:#FFAC8F;  /* Light Salmon */
-      --ink:#0F172A;
-      --ink-soft:#334155;
-      --ring:rgba(15,23,42,.08);
-      --cream:#FFF7F4;
-      --card:#ffffff;
+      --ink:#0F172A; 
+      --ink-soft:#374151;
+      --line:#E5E7EB;
+      --white:#FFFFFF;
+      --salmon-bg:#FFE7E1;  /* calm, solid salmon */
     }
 
-    /* BIG hero, split background (white | light salmon) */
+    /* Header (reuse your site header buttons/styles from home) */
+    .header-actions { display:flex; gap:10px; align-items:center; margin-left:auto; }
+    .btn-login {
+      display:inline-block; padding:10px 14px; border-radius:12px; font-weight:800;
+      color:#0B4FA2; background:#fff; border:1.5px solid #CBD6EA;
+    }
+    .btn-member {
+      display:inline-block; padding:10px 16px; border-radius:12px; font-weight:800;
+      color:#fff; background:#0B4FA2; border:none;
+    }
+
+    /* =============== HERO (calm, solid, split) =============== */
     .fp-hero{
-      position:relative; overflow:hidden;
-      padding:120px 0 110px; /* BIG like investor hero */
-      background: linear-gradient(90deg, #ffffff 0 54%, #FFE7E1 54% 100%);
+      position:relative; overflow:hidden; color:var(--ink);
+      padding:96px 0; background:var(--white);
+      border-bottom:1px solid var(--line); /* crisp separation below */
     }
-    .fp-wrap{ max-width:980px; margin:0 auto; padding:0 20px; }
-    .fp-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
-    @media (max-width:980px){ .fp-grid{ grid-template-columns:1fr; } .fp-hero{ padding:96px 0 80px; background:#FFE7E1; } }
+    /* Solid salmon panel on the RIGHT, no blending */
+    .fp-hero::after{
+      content:""; position:absolute; top:0; right:0; bottom:0;
+      width:40%; background:var(--salmon-bg); /* adjust width as needed */
+      pointer-events:none;
+    }
 
-    /* Title lockup */
-    .fp-title{ font-size:56px; line-height:1.06; margin:0 0 14px; letter-spacing:.2px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .fp-grid{ display:grid; grid-template-columns: 1.25fr .75fr; gap:48px; align-items:center; }
+    @media (max-width: 980px){
+      .fp-hero{ padding:84px 0; }
+      .fp-hero::after{ display:none; }          /* mobile = simple full white */
+      .fp-grid{ grid-template-columns:1fr; }
+    }
+
+    /* Title lockup (exact vibe you wanted) */
+    .fp-title{ font-size: clamp(32px, 5vw, 56px); line-height:1.1; margin:10px 0 16px; font-weight:800; }
     .fp-fruit{
-      display:inline-block; margin-right:8px; font-weight:800;
-      color:var(--fp-coral); background:#fff; padding:6px 10px; border-radius:10px;
-      box-shadow:0 1px 0 var(--ring);
+      display:inline-block; margin-right:8px; font-weight:800; color:var(--fp-coral);
+      background:#fff; padding:6px 10px; border-radius:10px; 
+      border:1px solid var(--line); /* subtle edge for the white tag */
     }
     .fp-pie{ color:var(--fp-salmon); font-weight:800; }
-    .fp-sub{ max-width:720px; color:var(--ink-soft); font-size:1.05rem; }
 
-    /* Bubble buttons */
-    .fp-actions{ margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; }
+    .fp-lead{ font-size: clamp(16px, 2.2vw, 20px); color:var(--ink-soft); max-width:58ch; }
+
+    /* Calm pills */
+    .fp-cta{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
     .chip{
-      display:inline-block; padding:10px 16px; border-radius:999px; font-weight:700;
-      text-decoration:none; box-shadow:0 1px 0 var(--ring);
+      display:inline-block; padding:10px 16px; border-radius:999px; font-weight:800; text-decoration:none;
+      border:1px solid var(--line);
     }
-    .chip.primary{ background:#fff; color:var(--fp-coral); border:1px solid rgba(15,23,42,.08); }
-    .chip.ghost{ background:transparent; color:var(--ink); border:1px solid rgba(15,23,42,.18); }
+    .chip.primary{ background:#fff; color:var(--fp-coral); }
+    .chip.ghost{ background:#fff; color:var(--ink); }
 
-    /* Right “At a glance” card – NO CTA */
+    /* Right card: simple, solid, no glass */
     .fp-card{
-      background:var(--card); border-radius:16px; padding:20px 20px 18px;
-      border:1px solid rgba(15,23,42,.08);
-      box-shadow:0 14px 36px rgba(15,23,42,.10), inset 0 1px 0 rgba(255,255,255,.6);
-      backdrop-filter:saturate(1.05);
+      position:relative; z-index:1; /* sit above salmon panel */
+      background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px;
+      box-shadow:none;
     }
-    .fp-kicker{ font-size:.82rem; font-weight:800; color:var(--fp-coral); margin:0 0 8px; letter-spacing:.2px; }
-    .fp-list{ margin:0 0 0 1.1rem; padding:0; line-height:1.65; color:var(--ink-soft); }
+    .fp-kicker{ text-transform:uppercase; letter-spacing:.22em; font-weight:800; font-size:.76rem; color:var(--fp-coral); margin:0 0 10px; }
+    .fp-card ul{ margin:0; padding-left:1.1rem; color:var(--ink-soft); line-height:1.6; }
 
-    /* Minimal body below hero */
+    /* Below: minimal, with generous whitespace and clear edges */
+    .fp-subnav{ background:#fff; border-bottom:1px solid var(--line); }
+    .fp-subnav ul{ display:flex; gap:28px; justify-content:center; padding:14px 0; margin:0; list-style:none; }
+    .fp-subnav a{ font-weight:600; color:#374151; }
+    .fp-subnav a:hover{ color:var(--fp-coral); }
+
     .fp-body{ padding:48px 0 64px; background:#fff; }
     .fp-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
     @media (max-width:900px){ .fp-cols{ grid-template-columns:1fr; } }
 
     .fp-mini{
-      background:#fff; border:1px solid rgba(15,23,42,.06); border-radius:14px; padding:18px;
-      box-shadow:0 8px 20px rgba(15,23,42,.06);
+      background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; box-shadow:none;
     }
     .fp-mini h3{ margin:0 0 6px; font-size:1.05rem; }
     .fp-mini p, .fp-mini ul{ margin:0; color:var(--ink-soft); }
@@ -73,41 +100,63 @@
   </style>
 </head>
 <body>
+  <!-- Header (same cohesion as home) -->
+  <header>
+    <div class="container nav" style="gap:16px">
+      <a class="brand" href="index.html" aria-label="Back to start" style="display:flex; align-items:center; gap:12px; font-weight:700">
+        <div class="brand-logo" aria-hidden="true" style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, var(--blue-800), var(--blue-700)); display:grid; place-items:center; color:#fff; font-weight:800">OT</div>
+        <div>O. M. TEASLEY Holdings</div>
+      </a>
+      <div class="header-actions">
+        <a class="btn-login" href="login.html">Log In</a>
+        <a class="btn-member" href="membership.html">Become a Member</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- HERO (big + cohesive) -->
+  <!-- HERO (solid white with solid salmon side panel) -->
   <section class="fp-hero">
-    <div class="fp-wrap fp-grid">
+    <div class="container fp-grid">
       <!-- Left -->
       <div>
+        <div class="fp-kicker">FruitPie Initiative</div>
         <h1 class="fp-title">
           <span class="fp-fruit">FRUIT</span><span class="fp-pie">PIE</span>
         </h1>
-        <p class="fp-sub">
+        <p class="fp-lead">
           FruitPie Coin is powered by the Institutional Trading Bot.
-          Every transaction supports and advances its development.
+          Every transaction supports and advances its development with transparent logs.
         </p>
-        <div class="fp-actions">
+        <div class="fp-cta">
           <a href="#howitworks" class="chip primary">How it works</a>
           <a href="#risks" class="chip ghost">Read risks</a>
         </div>
       </div>
 
-      <!-- Right: At a glance (no CTA) -->
+      <!-- Right card sits on salmon panel, but is plain white -->
       <aside class="fp-card">
-        <p class="fp-kicker">At a glance</p>
-        <ul class="fp-list">
+        <span class="fp-kicker">At a glance</span>
+        <ul>
           <li>Fixed supply; published contract</li>
-          <li>Public treasury wallet &amp; movement logs</li>
+          <li>Public treasury wallet & movement logs</li>
           <li>Funds advance the Institutional Trading Bot</li>
-          <li>Community oversight via dashboards</li>
+          <li>Community oversight dashboards</li>
         </ul>
       </aside>
     </div>
   </section>
 
-  <!-- Minimal body content -->
+  <!-- Optional tiny subnav (like home) -->
+  <div class="fp-subnav">
+    <ul>
+      <li><a href="#howitworks">How it works</a></li>
+      <li><a href="#risks">Risks</a></li>
+    </ul>
+  </div>
+
+  <!-- Minimal content below -->
   <main class="fp-body">
-    <div class="fp-wrap fp-cols">
+    <div class="container fp-cols">
       <section id="howitworks" class="fp-mini">
         <h3>How it works</h3>
         <ol>
@@ -119,14 +168,19 @@
 
       <section id="risks" class="fp-mini">
         <h3>Risks</h3>
-        <p>Not hype; not a promise of overnight returns. This is a transparent,
-           long-term initiative with clear documentation and open logs.</p>
+        <p>
+          Not hype; not a promise of overnight returns. This is a transparent,
+          long-term initiative with clear documentation and open logs.
+        </p>
       </section>
     </div>
   </main>
 
-  <footer style="padding:36px 20px; text-align:center; font-size:.85rem; color:#666;">
-    &copy; 2025 O. M. TEASLEY Holdings — FruitPie
+  <footer>
+    <div class="container footer-top">
+      <p class="fineprint">© <span id="year"></span> O. M. TEASLEY Holdings — FruitPie.</p>
+    </div>
   </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
