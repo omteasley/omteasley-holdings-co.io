@@ -1,145 +1,89 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FruitPie — Institutional Coin</title>
-  <meta name="description" content="FruitPie Coin is powered by the Institutional Trading Bot, designed to advance and support its ongoing development." />
-  <style>
-    :root{
-      --coral:#ff5757;           /* main brand color */
-      --salmon:#FFAC8F;          /* secondary accent */
-      --ink:#1f2937;
-      --cream:#FFFDF5;
-      --card:#ffffff;
-      --line:#eae7da;
-      --radius:18px;
-      --shadow:0 8px 24px rgba(31,41,55,.08);
-    }
-    html,body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:var(--coral);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}/* Header */
-header{
-  background:#fff; border-bottom:1px solid var(--line);
-}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px;font-size:24px;color:var(--coral);font-family:"Nexa Bold",sans-serif}
-.logo{width:180px;height:auto}
-.links{display:flex;gap:18px;align-items:center}
-.btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:700}
-.btn-primary{background:var(--coral);color:#fff}
-.btn-outline{border:2px solid var(--coral);color:var(--coral)}
-
-/* Hero */
-.hero{background:linear-gradient(180deg,var(--coral) 0,var(--salmon) 100%);color:#fff}
-.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:64px 20px}
-h1{font-size:48px;line-height:1.06;margin:10px 0;font-family:"Nexa Bold",sans-serif}
-.hero p{font-size:18px;max-width:58ch}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-
-/* Sections */
-section{padding:56px 0}
-h2{font-size:32px;margin:0 0 12px;font-family:"Nexa Bold",sans-serif;color:var(--coral)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-
-footer{background:#111827;color:#e5e7eb}
-footer .wrap{padding:30px 20px}
-.fine{font-size:13px;opacity:.8}
-
-  </style>
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <img src="/images/fruitpie-logo.png" alt="FruitPie Logo" class="logo" />
-      </div>
-      <nav class="links">
-        <a href="#about">About</a>
-        <a href="#token">Token</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-    </div>
-  </header>  <!-- HERO -->  <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1>FruitPie Coin</h1>
-        <p>FruitPie is a digital coin powered by our Institutional Trading Bot. Every transaction supports and advances the ongoing development of the bot, designed for institutional-grade strategies and innovation.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#about">Learn More</a>
-          <a class="btn btn-outline" href="#join">Join Community</a>
-        </div>
-      </div>
-      <div>
-        <img src="/images/fruitpie-logo.png" alt="FruitPie Symbol" class="logo" />
+<main>
+  <!-- Hero -->
+  <section style="background:linear-gradient(180deg,#ff5757 0%,#FFAC8F 100%);color:#fff;padding:68px 0;border-radius:0 0 24px 24px;">
+    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+      <h1 style="font-size:48px;margin:0 0 14px;font-family:'Nexa Bold',sans-serif;">
+        <span style="color:#ff5757;background:#fff;padding:4px 10px;border-radius:8px;">FRUIT</span>
+        <span style="color:#FFAC8F;">PIE</span>
+      </h1>
+      <p style="max-width:760px;opacity:.95;font-size:18px;">
+        FruitPie Coin is powered by the Institutional Trading Bot. Every transaction supports and advances its development.
+      </p>
+      <div style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#howitworks" style="background:#fff;color:#ff5757;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15);">How it works</a>
+        <a href="#risks" style="border:2px solid #fff;color:#fff;padding:12px 20px;border-radius:14px;font-weight:700;text-decoration:none;">Read risks</a>
       </div>
     </div>
-  </section>  <!-- ABOUT -->  <section id="about">
-    <div class="wrap">
-      <h2>About FruitPie</h2>
-      <p>FruitPie is not just another coin. It is purpose-built to fund and accelerate the Institutional Trading Bot — an advanced platform for institutional strategies. By holding and using FruitPie, you help drive forward trading technology that redefines transparency and capability.</p>
-    </div>
-  </section>  <!-- TOKEN -->  <section id="token">
-    <div class="wrap">
-      <h2>Token Details</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Supply</h3>
-          <p>Fixed total supply, published contract address, and transparent wallet logs.</p>
-        </div>
-        <div class="card">
-          <h3>Treasury</h3>
-          <p>Multi-sig wallet. All treasury movements fund the Institutional Trading Bot directly.</p>
-        </div>
-        <div class="card">
-          <h3>Utility</h3>
-          <p>Each transaction supports bot development, research, and infrastructure scaling.</p>
-        </div>
+  </section>  <!-- Cards -->  <section style="padding:56px 0;background:#fff7f5;">
+    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div style="background:#fff;border:1px solid #ffd6cc;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(31,41,55,.08);">
+        <h3 style="margin-top:0;color:#ff5757;font-family:'Nexa Bold',sans-serif;">What it is</h3>
+        <p>FruitPie funds and advances the Institutional Trading Bot. Open documentation; transparent logs.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #ffd6cc;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(31,41,55,.08);">
+        <h3 style="margin-top:0;color:#ff5757;font-family:'Nexa Bold',sans-serif;">What it isn’t</h3>
+        <p>Not hype, not a promise of overnight returns. It is built for long-term advancement.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #ffd6cc;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(31,41,55,.08);">
+        <h3 style="margin-top:0;color:#ff5757;font-family:'Nexa Bold',sans-serif;">Transparency</h3>
+        <ul style="margin:0;padding-left:20px;line-height:1.8;">
+          <li>Publish token supply & wallets</li>
+          <li>Post change logs & treasury moves</li>
+          <li>Community oversight through dashboards</li>
+        </ul>
       </div>
     </div>
-  </section>  <!-- ROADMAP -->  <section id="roadmap">
-    <div class="wrap">
-      <h2>Roadmap</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Phase 1</h3>
-          <p>Launch FruitPie with transparent supply and wallet disclosures.</p>
-        </div>
-        <div class="card">
-          <h3>Phase 2</h3>
-          <p>Integrate with the Institutional Trading Bot, directing funds toward its core development.</p>
-        </div>
-        <div class="card">
-          <h3>Phase 3</h3>
-          <p>Community dashboards to track progress of both FruitPie and the bot.</p>
-        </div>
+  </section>  <!-- How it works -->  <section id="howitworks" style="padding:64px 0;">
+    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+      <h2 style="font-family:'Nexa Bold',sans-serif;color:#ff5757;margin-bottom:20px;">
+        <span style="color:#ff5757;">FRUIT</span><span style="color:#FFAC8F;">PIE</span> How it works
+      </h2>
+      <ol style="padding-left:22px;line-height:1.9;">
+        <li>FruitPie Coin is issued with fixed supply and published contract.</li>
+        <li>Treasury wallet is published; every movement logged.</li>
+        <li>Funds directly support the Institutional Trading Bot’s development and scaling.</li>
+      </ol>
+    </div>
+  </section>  <!-- Tokenomics -->  <section style="padding:56px 0;background:#fff7f5;">
+    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+      <h2 style="font-family:'Nexa Bold',sans-serif;color:#ff5757;margin-bottom:20px;">
+        <span style="color:#ff5757;">FRUIT</span><span style="color:#FFAC8F;">PIE</span> Token details
+      </h2>
+      <ul style="padding-left:22px;line-height:1.8;">
+        <li>Total supply, contract address, explorer link</li>
+        <li>Treasury allocation & policy</li>
+        <li>Utility: powering the Institutional Trading Bot</li>
+      </ul>
+    </div>
+  </section>  <!-- Risks -->  <section id="risks" style="padding:64px 0;">
+    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+      <h2 style="font-family:'Nexa Bold',sans-serif;color:#ff5757;margin-bottom:20px;">
+        <span style="color:#ff5757;">FRUIT</span><span style="color:#FFAC8F;">PIE</span> Risks (read first)
+      </h2>
+      <ul style="padding-left:22px;line-height:1.9;">
+        <li>Digital assets are extremely volatile; you can lose 100%.</li>
+        <li>Smart-contract bugs, chain congestion, and liquidity risks exist.</li>
+        <li>No expectation of profit or secondary-market liquidity.</li>
+        <li>Regulatory changes can impact availability or features.</li>
+      </ul>
+    </div>
+  </section>  <!-- FAQ -->  <section style="padding:56px 0;background:#fff7f5;">
+    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+      <h2 style="font-family:'Nexa Bold',sans-serif;color:#ff5757;margin-bottom:20px;">
+        <span style="color:#ff5757;">FRUIT</span><span style="color:#FFAC8F;">PIE</span> FAQ
+      </h2>
+      <div style="background:#fff;border:1px solid #ffd6cc;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(31,41,55,.08);margin-bottom:20px;">
+        <h3 style="margin-top:0;color:#ff5757;">What powers FruitPie?</h3>
+        <p>FruitPie funds and supports the Institutional Trading Bot project.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #ffd6cc;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(31,41,55,.08);margin-bottom:20px;">
+        <h3 style="margin-top:0;color:#ff5757;">Who manages the treasury?</h3>
+        <p>Multi-sig policy with published logs and full transparency.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #ffd6cc;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(31,41,55,.08);">
+        <h3 style="margin-top:0;color:#ff5757;">How do I follow updates?</h3>
+        <p>Join the community channel: <a href="#" style="color:#ff5757;font-weight:600;">Discord/Community Link</a>.</p>
       </div>
     </div>
-  </section>  <!-- FAQ -->  <section id="faq">
-    <div class="wrap">
-      <h2>FAQ</h2>
-      <h3>What is FruitPie?</h3>
-      <p>A digital coin designed to fund and accelerate the Institutional Trading Bot project.</p>
-      <h3>Who manages it?</h3>
-      <p>A dedicated core team maintains FruitPie, ensuring transparency and direct funding for bot advancement.</p>
-      <h3>Where can I follow updates?</h3>
-      <p>Join the community channels and track progress reports on our dashboard.</p>
-    </div>
-  </section>  <!-- FOOTER -->  <footer>
-    <div class="wrap">
-      <nav class="links">
-        <a href="/disclosures.html">Disclosures</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/privacy.html">Privacy</a>
-      </nav>
-      <p class="fine">© <span id="y"></span> O. M. TEASLEY Holdings. FruitPie Coin supports the Institutional Trading Bot.</p>
-      <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-    </div>
-  </footer>
-</body>
-</html>
+  </section>
+</main>
