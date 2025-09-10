@@ -1,176 +1,106 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Loans & Referrals — O. M. TEASLEY</title>
-  <meta name="description" content="Explore or apply for loans via our trusted partner. Business, personal, mortgage and more.">
-  <link rel="stylesheet" href="assets/css/styles.css"/>
+<style>
+  /* ===== Accent palette (tweak these to match AFN exactly) ===== */
+  :root{
+    --brand-blue:#0B4FA2;      /* existing primary blue */
+    --brand-blue-2:#1666C5;
+    --ink:#0F172A;
+    --slate:#334155;
 
-  <!-- Page-specific styling (Dave-like layout, your palette) -->
-  <style>
-    .hero-lite {
-      position: relative; overflow: hidden; padding: 84px 0;
-      color:#0F172A; background: linear-gradient(180deg, #F2F6FB, #E9F0FA);
+    --brand-green:#16A34A;     /* AFN-like green (tailwind green-600) */
+    --brand-green-2:#22C55E;   /* lighter gradient stop */
+    --brand-green-dark:#15803D;/* hover */
+    --green-soft:#ECFDF5;      /* soft bg for pills/panels */
+    --green-border:#D1FAE5;    /* light border */
+  }
+
+  .hero-lite {
+    position: relative; overflow: hidden; padding: 84px 0;
+    color: var(--ink);
+    background: linear-gradient(180deg, #F2F6FB, #E9F0FA);
+  }
+  .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; }
+  @media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .kicker { text-transform:uppercase; letter-spacing:.22em; font-weight:800; color:#335ea8; font-size:.8rem; }
+  .hero-headline { margin:10px 0 12px; font-size:clamp(28px,5vw,52px); line-height:1.08; font-weight:900; color:#0A3871; }
+  .hero-sub { font-size:clamp(16px,2.2vw,19px); color:#334155; max-width:60ch; }
+
+  .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
+
+  /* === Buttons (Green accents) === */
+  .btn-apply {
+    display:inline-block; padding:14px 22px; border-radius:14px; font-weight:800; letter-spacing:.2px;
+    color:#fff; border:none;
+    background:linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-2) 100%);
+    box-shadow:0 10px 26px rgba(22, 197, 94, .22);
+    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, opacity .18s ease;
+  }
+  .btn-apply:hover {
+    transform:translateY(-2px);
+    box-shadow:0 16px 30px rgba(22, 197, 94, .28);
+    background:linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green) 100%);
+    color:#fff;
+  }
+  .btn-apply:focus-visible {
+    outline: 3px solid rgba(34,197,94,.35);
+    outline-offset: 2px;
+  }
+
+  .btn-learn {
+    display:inline-block; padding:14px 22px; border-radius:14px; font-weight:800; letter-spacing:.2px;
+    color:var(--brand-green); background:#fff; border:1.5px solid var(--green-border);
+    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-learn:hover {
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(34,197,94,.12);
+    background:var(--green-soft);
+    border-color:rgba(34,197,94,.45);
+    color:var(--brand-green-dark);
+  }
+  .btn-learn:focus-visible {
+    outline: 3px solid rgba(34,197,94,.35);
+    outline-offset: 2px;
+  }
+
+  /* === Right mock panel === */
+  .mock-panel {
+    position:relative; border-radius:24px; border:1px solid #E6EEF9; box-shadow:0 12px 40px rgba(2,24,62,.12);
+    background:#fff; padding:22px; min-height:360px; overflow:hidden;
+  }
+  .mock-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; color:#334155; font-weight:700; }
+
+  /* pill gets a green tint */
+  .pill {
+    display:inline-block; padding:6px 10px; border-radius:999px;
+    background: var(--green-soft);
+    color: var(--brand-green);
+    font-weight:800; font-size:.78rem;
+    border:1px solid var(--green-border);
+  }
+
+  .mock-features { display:grid; gap:12px; margin-top:8px; }
+  .mf {
+    display:flex; gap:10px; align-items:flex-start;
+    background:#F8FBFF; border:1px solid #E6EEF9; border-radius:14px; padding:12px;
+  }
+  .mf svg { color: var(--brand-green); flex:0 0 auto; }
+  .mf strong { display:block; color:var(--ink); }
+  .mf span { color:#64748B; font-size:.95rem; }
+
+  /* === Trust band with green check icons === */
+  .trust-band { background:#fff; border-top:1px solid #E6EEF9; border-bottom:1px solid #E6EEF9; }
+  .trust-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding:28px 0; }
+  @media (max-width:900px){ .trust-grid{ grid-template-columns:1fr; } }
+  .trust-item { display:flex; align-items:center; gap:10px; color:#334155; }
+  .trust-item svg { color: var(--brand-green); }
+
+  /* Optional: subtle green divider under hero on large screens */
+  @media (min-width: 900px){
+    .hero-lite::after{
+      content:""; position:absolute; left:0; right:0; bottom:0; height:3px;
+      background: linear-gradient(90deg, transparent 0%, rgba(34,197,94,.35) 20%, rgba(34,197,94,.35) 80%, transparent 100%);
     }
-    .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; }
-    @media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
-
-    .kicker { text-transform:uppercase; letter-spacing:.22em; font-weight:800; color:#335ea8; font-size:.8rem; }
-    .hero-headline { margin:10px 0 12px; font-size:clamp(28px,5vw,52px); line-height:1.08; font-weight:900; color:#0A3871; }
-    .hero-sub { font-size:clamp(16px,2.2vw,19px); color:#334155; max-width:60ch; }
-
-    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
-    .btn-apply {
-      display:inline-block; padding:14px 22px; border-radius:14px; font-weight:800; letter-spacing:.2px;
-      color:#fff; border:none; background:linear-gradient(135deg,#0B4FA2 0%, #1666C5 100%);
-      box-shadow:0 10px 26px rgba(11,79,162,.22);
-      transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, opacity .18s ease;
-    }
-    .btn-apply:hover { transform:translateY(-2px); box-shadow:0 16px 30px rgba(11,79,162,.28); background:rgba(11,79,162,.85); color:#fff; backdrop-filter:blur(6px); }
-    .btn-learn {
-      display:inline-block; padding:14px 22px; border-radius:14px; font-weight:800; letter-spacing:.2px;
-      color:#0B4FA2; background:#fff; border:1.5px solid #CBD6EA;
-      transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
-    }
-    .btn-learn:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(11,79,162,.12); background:#F9FBFF; color:#0A3871; }
-
-    .mock-panel {
-      position:relative; border-radius:24px; border:1px solid #E6EEF9; box-shadow:0 12px 40px rgba(2,24,62,.12);
-      background:#fff; padding:22px; min-height:360px; overflow:hidden;
-    }
-    .mock-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; color:#334155; font-weight:700; }
-    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#E7F0FB; color:#0B4FA2; font-weight:800; font-size:.78rem; }
-    .mock-features { display:grid; gap:12px; margin-top:8px; }
-    .mf { display:flex; gap:10px; align-items:flex-start; background:#F8FBFF; border:1px solid #E6EEF9; border-radius:14px; padding:12px; }
-    .mf svg { color:#0B4FA2; flex:0 0 auto; }
-    .mf strong { display:block; color:#0F172A; }
-    .mf span { color:#64748B; font-size:.95rem; }
-
-    .trust-band { background:#fff; border-top:1px solid #E6EEF9; border-bottom:1px solid #E6EEF9; }
-    .trust-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding:28px 0; }
-    @media (max-width:900px){ .trust-grid{ grid-template-columns:1fr; } }
-    .trust-item { display:flex; align-items:center; gap:10px; color:#334155; }
-    .trust-item svg { color:#1666C5; }
-  </style>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container nav" style="justify-content:center; text-align:center">
-    <a class="brand" href="index.html" aria-label="Back to start">
-      <div class="brand-badge">OT</div>
-      <div class="brand-name">O. M. TEASLEY Holdings</div>
-    </a>
-  </div>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero-lite">
-    <div class="container hero-grid">
-      <div>
-        <div class="kicker">Loans & Referrals</div>
-        <h1 class="hero-headline">Money when you need it—<br/>with clear options and no guesswork.</h1>
-        <p class="hero-sub">
-          We partner with trusted providers so you can compare, learn, and apply with confidence.
-          Start your application or learn more first—your call.
-        </p>
-        <div class="cta-row">
-          <!-- Apply Now: APPLICATION LINK -->
-          <a class="btn-apply"
-             href="https://app.advancefundsnetwork.com/application/Wxr0MzAYSFSxWJTf0tI0qqBExw03?partner=hwqwL4CivjfEnHAIeVZxfgzJK1h1"
-             target="_blank" rel="noopener">
-            Apply Now
-          </a>
-          <!-- Learn More: LANDING PAGE LINK -->
-          <a class="btn-learn"
-             href="https://app.advancefundsnetwork.com/partner-landing/hwqwL4CivjfEnHAIeVZxfgzJK1h1"
-             target="_blank" rel="noopener">
-            Learn More
-          </a>
-        </div>
-        <p class="muted" style="margin-top:10px; font-size:.92rem">
-          You’ll continue on our partner’s secure website.
-        </p>
-      </div>
-
-      <!-- Right visual (phone-like panel) -->
-      <aside class="mock-panel" aria-label="Quick snapshot">
-        <div class="mock-head">
-          <span class="pill">Quick Snapshot</span>
-          <span style="color:#64748B">What you can explore</span>
-        </div>
-        <div class="mock-features">
-          <div class="mf">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3l9 8h-3v9h-4v-6H10v6H6v-9H3l9-8Z" fill="currentColor"/>
-            </svg>
-            <div>
-              <strong>Mortgage & HELOC</strong>
-              <span>Compare options, terms, and rates through partner lenders.</span>
-            </div>
-          </div>
-          <div class="mf">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 7h18v10H3V7Zm4-4h10v3H7V3Z" fill="currentColor"/>
-            </svg>
-            <div>
-              <strong>Business & Personal</strong>
-              <span>From working capital to personal needs—see what fits.</span>
-            </div>
-          </div>
-          <div class="mf">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6h16v12H4zM6 8h12v2H6z" fill="currentColor"/>
-            </svg>
-            <div>
-              <strong>Auto • Student • More</strong>
-              <span>Explore additional categories and find a match.</span>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Trust band -->
-  <section class="trust-band">
-    <div class="container trust-grid">
-      <div class="trust-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Transparent referral relationships
-      </div>
-      <div class="trust-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        You choose: learn first or apply now
-      </div>
-      <div class="trust-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Partners set all rates & terms
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-inner" style="text-align:center">
-    <p class="fineprint">
-      © <span id="y"></span> O. M. TEASLEY Holdings ·
-      <a href="disclosures.html">Disclosures</a> ·
-      <a href="terms.html">Terms</a> ·
-      <a href="privacy.html">Privacy</a>
-    </p>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-</body>
+  }
+</style>
+      
