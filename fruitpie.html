@@ -7,52 +7,77 @@
   <meta name="description" content="FruitPie Coin funds and advances the Institutional Trading Bot. Every transaction supports its development.">
   <link rel="stylesheet" href="assets/css/styles.css"/>
 
-  <!-- FruitPie-only styles -->
+  <!-- FruitPie-only styles (scoped) -->
   <style>
     :root{
       --fp-coral:#ff5757;   /* Coral Red */
       --fp-salmon:#FFAC8F;  /* Light Salmon */
-      --ink:#0F172A; 
-      --ink-soft:#334155; 
-      --bg-cream:#FFF7F4; 
+      --ink:#0F172A;
+      --ink-soft:#334155;
       --ring:rgba(15,23,42,.08);
+      --cream:#FFF7F4;
+      --card:#ffffff;
     }
 
-    .fp-hero{ position:relative; overflow:hidden; padding:84px 0;
-      color:var(--ink);
-      background:
-        linear-gradient(180deg, var(--bg-cream), #fff) padding-box,
-        linear-gradient(180deg, rgba(255,87,87,.18), rgba(255,172,143,.12)) border-box;
-      border-bottom:14px solid rgba(255,172,143,.25);
+    /* BIG hero, split background (white | light salmon) */
+    .fp-hero{
+      position:relative; overflow:hidden;
+      padding:120px 0 110px; /* BIG like investor hero */
+      background: linear-gradient(90deg, #ffffff 0 54%, #FFE7E1 54% 100%);
     }
-    .fp-container{ max-width:980px; margin:0 auto; padding:0 20px; }
-    .fp-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; }
-    @media (max-width:980px){ .fp-grid{ grid-template-columns:1fr; } }
+    .fp-wrap{ max-width:980px; margin:0 auto; padding:0 20px; }
+    .fp-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
+    @media (max-width:980px){ .fp-grid{ grid-template-columns:1fr; } .fp-hero{ padding:96px 0 80px; background:#FFE7E1; } }
 
-    .fp-title{ font-size:44px; line-height:1.1; margin:0 0 12px; }
-    .fp-fruit{ color:var(--fp-coral); background:#fff; padding:4px 8px; border-radius:8px;
-      display:inline-block; margin-right:6px; font-weight:800; }
+    /* Title lockup */
+    .fp-title{ font-size:56px; line-height:1.06; margin:0 0 14px; letter-spacing:.2px; }
+    .fp-fruit{
+      display:inline-block; margin-right:8px; font-weight:800;
+      color:var(--fp-coral); background:#fff; padding:6px 10px; border-radius:10px;
+      box-shadow:0 1px 0 var(--ring);
+    }
     .fp-pie{ color:var(--fp-salmon); font-weight:800; }
-    .fp-sub{ max-width:720px; color:var(--ink-soft); }
-    .fp-actions{ margin-top:20px; display:flex; gap:12px; flex-wrap:wrap; }
-    .fp-btn{ display:inline-block; padding:12px 18px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 1px 0 var(--ring); }
-    .fp-btn.primary{ background:#fff; color:var(--fp-coral); }
-    .fp-btn.ghost{ background:transparent; color:var(--ink); border:1px solid rgba(15,23,42,.12); }
+    .fp-sub{ max-width:720px; color:var(--ink-soft); font-size:1.05rem; }
 
-    .fp-card{ background:#fff; border-radius:14px; padding:18px 18px 16px;
-      box-shadow:0 10px 30px rgba(15,23,42,.08), inset 0 1px 0 rgba(255,255,255,.6);
-      border:1px solid rgba(15,23,42,.06); backdrop-filter:saturate(1.1); }
-    .fp-kicker{ font-size:.85rem; font-weight:700; color:var(--fp-coral); margin:0 0 8px; }
-    .fp-list{ margin:0 0 14px 1.2rem; padding:0; line-height:1.6; color:var(--ink-soft); }
-    .fp-cta{ font-weight:700; text-decoration:none; color:var(--fp-coral); }
+    /* Bubble buttons */
+    .fp-actions{ margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; }
+    .chip{
+      display:inline-block; padding:10px 16px; border-radius:999px; font-weight:700;
+      text-decoration:none; box-shadow:0 1px 0 var(--ring);
+    }
+    .chip.primary{ background:#fff; color:var(--fp-coral); border:1px solid rgba(15,23,42,.08); }
+    .chip.ghost{ background:transparent; color:var(--ink); border:1px solid rgba(15,23,42,.18); }
+
+    /* Right “At a glance” card – NO CTA */
+    .fp-card{
+      background:var(--card); border-radius:16px; padding:20px 20px 18px;
+      border:1px solid rgba(15,23,42,.08);
+      box-shadow:0 14px 36px rgba(15,23,42,.10), inset 0 1px 0 rgba(255,255,255,.6);
+      backdrop-filter:saturate(1.05);
+    }
+    .fp-kicker{ font-size:.82rem; font-weight:800; color:var(--fp-coral); margin:0 0 8px; letter-spacing:.2px; }
+    .fp-list{ margin:0 0 0 1.1rem; padding:0; line-height:1.65; color:var(--ink-soft); }
+
+    /* Minimal body below hero */
+    .fp-body{ padding:48px 0 64px; background:#fff; }
+    .fp-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    @media (max-width:900px){ .fp-cols{ grid-template-columns:1fr; } }
+
+    .fp-mini{
+      background:#fff; border:1px solid rgba(15,23,42,.06); border-radius:14px; padding:18px;
+      box-shadow:0 8px 20px rgba(15,23,42,.06);
+    }
+    .fp-mini h3{ margin:0 0 6px; font-size:1.05rem; }
+    .fp-mini p, .fp-mini ul{ margin:0; color:var(--ink-soft); }
+    .fp-mini ul{ margin-left:1rem; line-height:1.6; }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- HERO (big + cohesive) -->
   <section class="fp-hero">
-    <div class="fp-container fp-grid">
-      <!-- Left side -->
+    <div class="fp-wrap fp-grid">
+      <!-- Left -->
       <div>
         <h1 class="fp-title">
           <span class="fp-fruit">FRUIT</span><span class="fp-pie">PIE</span>
@@ -62,43 +87,46 @@
           Every transaction supports and advances its development.
         </p>
         <div class="fp-actions">
-          <a href="#howitworks" class="fp-btn primary">How it works</a>
-          <a href="#risks" class="fp-btn ghost">Read risks</a>
+          <a href="#howitworks" class="chip primary">How it works</a>
+          <a href="#risks" class="chip ghost">Read risks</a>
         </div>
       </div>
 
-      <!-- Right side card -->
+      <!-- Right: At a glance (no CTA) -->
       <aside class="fp-card">
         <p class="fp-kicker">At a glance</p>
         <ul class="fp-list">
           <li>Fixed supply; published contract</li>
-          <li>Treasury wallet &amp; change log posted</li>
-          <li>Funds advance the Institutional Bot</li>
-          <li>Community dashboards for oversight</li>
+          <li>Public treasury wallet &amp; movement logs</li>
+          <li>Funds advance the Institutional Trading Bot</li>
+          <li>Community oversight via dashboards</li>
         </ul>
-        <a href="#request" class="fp-cta">Request a call</a>
       </aside>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main class="fp-container" style="padding:60px 0;">
-    <h2 id="howitworks">FruitPie: How it works</h2>
-    <ol>
-      <li>FruitPie Coin is issued with fixed supply and published contract.</li>
-      <li>Treasury wallet is public; every movement logged.</li>
-      <li>Funds directly support the Institutional Trading Bot’s development and scaling.</li>
-    </ol>
+  <!-- Minimal body content -->
+  <main class="fp-body">
+    <div class="fp-wrap fp-cols">
+      <section id="howitworks" class="fp-mini">
+        <h3>How it works</h3>
+        <ol>
+          <li>Fixed supply issued; contract is public.</li>
+          <li>Treasury wallet is transparent with change logs.</li>
+          <li>Proceeds fund development & scaling of the Institutional Bot.</li>
+        </ol>
+      </section>
 
-    <h2 id="risks">Risks</h2>
-    <p>
-      This is not hype or a promise of overnight returns. It is a transparent initiative for
-      long-term advancement. Please read carefully before participating.
-    </p>
+      <section id="risks" class="fp-mini">
+        <h3>Risks</h3>
+        <p>Not hype; not a promise of overnight returns. This is a transparent,
+           long-term initiative with clear documentation and open logs.</p>
+      </section>
+    </div>
   </main>
 
-  <footer style="padding:40px 20px; text-align:center; font-size:.85rem; color:#666;">
-    &copy; 2025 O. M. TEASLEY Holdings — FruitPie Initiative
+  <footer style="padding:36px 20px; text-align:center; font-size:.85rem; color:#666;">
+    &copy; 2025 O. M. TEASLEY Holdings — FruitPie
   </footer>
 </body>
 </html>
