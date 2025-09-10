@@ -1,89 +1,237 @@
-<main>
-  <!-- Hero -->
-  <section style="background:#0e4fb8;color:#fff;padding:68px 0;">
-    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
-      <h1 style="font-size:44px;margin:0 0 10px;">FruitPie — Meme Coin (experimental)</h1>
-      <p style="max-width:760px;opacity:.95;">
-        A playful, community-driven token experiment for learning and transparency. Not an investment. No promises of profit. Could go to zero.
-      </p>
-      <div style="margin-top:20px;display:flex;gap:12px;">
-        <a href="#howitworks" style="background:#fff;color:#0e4fb8;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;">How it works</a>
-        <a href="#risks" style="border:2px solid #fff;color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;">Read risks</a>
+Fruitpie
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FruitPie — Community Meme Coin (Experimental)</title>
+  <meta name="description" content="FruitPie is a playful, community-driven token experiment. Not an investment. No promises of profit." />
+  <style>
+    :root{
+      /* Dogecoin-inspired, but original palette */
+      --gold: #F4D06F;         /* primary brand */
+      --gold-2:#F9E7A0;        /* soft tint */
+      --ink: #1f2937;          /* dark text */
+      --cream:#FFFDF5;         /* page bg */
+      --mint:#81E6D9;          /* accent */
+      --sky:#60A5FA;           /* links */
+      --card:#ffffff;          /* card bg */
+      --line:#eae7da;          /* borders */
+      --success:#22c55e;
+      --danger:#ef4444;
+      --radius:18px;
+      --shadow: 0 8px 24px rgba(31,41,55,.08);
+    }
+    html,body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--sky);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,253,245,.85);backdrop-filter:saturate(130%) blur(6px);
+      border-bottom:1px solid var(--line)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .coin{width:42px;height:42px;border-radius:50%;background:radial-gradient(120px 120px at 30% 30%,#fff, var(--gold));
+      border:3px solid #eed27b; display:grid;place-items:center;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .coin span{font-weight:900;color:#7a5a00}
+    .links{display:flex;gap:18px;align-items:center}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:700}
+    .btn-primary{background:var(--ink);color:#fff}
+    .btn-outline{border:2px solid var(--ink);color:var(--ink)}/* Hero */
+.hero{background:linear-gradient(180deg,var(--gold) 0,var(--gold-2) 100%);}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:64px 20px}
+.kicker{font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+h1{font-size:48px;line-height:1.06;margin:10px 0}
+.hero p{font-size:18px;max-width:58ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+.coin-big{width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(160px 160px at 28% 28%,#fff, var(--gold));
+  border:6px solid #eed27b;box-shadow:0 20px 60px rgba(0,0,0,.18);display:grid;place-items:center;justify-self:center}
+.coin-big span{font-size:72px;font-weight:900;color:#7a5a00}
+
+/* Sections */
+section{padding:56px 0}
+h2{font-size:32px;margin:0 0 12px}
+.muted{opacity:.8}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.list{padding-left:18px}
+
+/* Timeline */
+.timeline{position:relative;padding-left:22px}
+.timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.step{position:relative;margin:18px 0}
+.step:before{content:"";position:absolute;left:-2px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid #d4b95e}
+
+/* Footer */
+footer{background:#111827;color:#e5e7eb}
+footer .wrap{padding:30px 20px}
+.fine{font-size:13px;opacity:.8}
+
+@media (max-width:920px){
+  .hero .wrap{grid-template-columns:1fr}
+  h1{font-size:40px}
+  .coin-big{width:160px;height:160px}
+}
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="coin" aria-hidden="true"><span>FP</span></div>
+        <div>FruitPie</div>
+      </div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#token">Token</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="#risks">Read Risks</a>
+      </nav>
+    </div>
+  </header>  <!-- HERO (Doge-like friendly, bold, sunny) -->  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="kicker">Community • Transparency • Fun</div>
+        <h1>FruitPie — a playful meme‑coin experiment.</h1>
+        <p>Lightweight, education‑first, and community‑driven. <strong>Not an investment.</strong> No promises of profit. Pure experiment that could go to zero. If you’re here, you’re here to learn and build transparent culture around tokens.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#about">How it works</a>
+          <a class="btn btn-outline" href="#join">Join community</a>
+        </div>
+      </div>
+      <div>
+        <div class="coin-big" aria-hidden="true"><span>🍰</span></div>
       </div>
     </div>
-  </section>
-
-  <!-- Cards -->
-  <section style="padding:40px 0;background:#f7f9fc;">
-    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-      <div style="background:#fff;border:1px solid #e8eef5;border-radius:14px;padding:18px;">
-        <h3>What it is</h3>
-        <p>Community token for education, transparency, and fun. Open documentation; basic governance polls.</p>
-      </div>
-      <div style="background:#fff;border:1px solid #e8eef5;border-radius:14px;padding:18px;">
-        <h3>What it isn’t</h3>
-        <p>Not a security, investment, or promise of profit. No expectation of return. Purely experimental.</p>
-      </div>
-      <div style="background:#fff;border:1px solid #e8eef5;border-radius:14px;padding:18px;">
-        <h3>Transparency</h3>
-        <ul style="margin:0;padding-left:18px;">
-          <li>Publish token supply & wallets</li>
-          <li>Post change logs & treasury moves</li>
-          <li>Community polls recorded publicly</li>
-        </ul>
+  </section>  <!-- WHAT / WHY -->  <section id="about">
+    <div class="wrap">
+      <h2>What is FruitPie?</h2>
+      <p class="muted">Inspired by the approachable vibe of classic meme‑coin sites, but with clearer disclosures and guardrails.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Community experiment</h3>
+          <p>We publish token details, wallets, and changes. Small, open‑book experiments; no financial promises.</p>
+        </div>
+        <div class="card">
+          <h3>Education‑first</h3>
+          <p>Learn about supply, treasury, on‑chain records, and responsible messaging. We avoid hype.</p>
+        </div>
+        <div class="card">
+          <h3>Simple rules</h3>
+          <ul class="list">
+            <li>No road‑to‑riches talk</li>
+            <li>No private allocations</li>
+            <li>Publish addresses + logs</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- How it works -->
-  <section id="howitworks" style="padding:48px 0;">
-    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
-      <h2>How it works</h2>
-      <ol style="padding-left:18px;line-height:1.8;">
-        <li>Token issued on <em>[chain TBD]</em> with fixed supply and published contract.</li>
-        <li>Initial treasury wallet published; movements logged.</li>
-        <li>Community proposes small, educational experiments; polls are non-binding.</li>
-      </ol>
-      <p style="font-size:14px;opacity:.75;">No sale or solicitation is made here. If a marketplace listing ever occurs, third-party terms and fees apply.</p>
-    </div>
-  </section>
-
-  <!-- Tokenomics (placeholder) -->
-  <section style="padding:40px 0;background:#f7f9fc;">
-    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+  </section>  <!-- TOKEN DETAILS -->  <section id="token" style="background:var(--gold-2)">
+    <div class="wrap">
       <h2>Token details (to be published)</h2>
-      <ul style="padding-left:18px;">
-        <li>Total supply, contract address, explorer link</li>
-        <li>Treasury allocation & policy</li>
-        <li>Transfer taxes/fees (if any)</li>
-      </ul>
+      <div class="cards">
+        <div class="card">
+          <h3>Supply</h3>
+          <p>Fixed total supply. Contract address & explorer link will be posted here at launch.</p>
+        </div>
+        <div class="card">
+          <h3>Treasury</h3>
+          <p>Multi‑sig wallet. All treasury movements are logged with reasons and tx links.</p>
+        </div>
+        <div class="card">
+          <h3>Fees</h3>
+          <p>No transfer taxes planned. If anything changes, it will be announced with on‑chain proof.</p>
+        </div>
+        <div class="card">
+          <h3>Listings</h3>
+          <p>No exchange listings promised. If a third‑party lists the token, their terms apply; we don’t control price/liquidity.</p>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- Risks -->
-  <section id="risks" style="padding:48px 0;">
-    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
-      <h2>Risks (read first)</h2>
-      <ul style="padding-left:18px;line-height:1.8;">
-        <li>Digital assets are extremely volatile; you can lose 100%.</li>
-        <li>Smart-contract bugs, chain congestion, and liquidity risks exist.</li>
-        <li>No expectation of profit or secondary-market liquidity.</li>
-        <li>Regulatory changes can impact availability or features.</li>
-      </ul>
-      <p style="font-size:14px;opacity:.75;">Educational only. Not advice. See <a href="/disclosures.html">Disclosures</a> and <a href="/terms.html">Terms</a>.</p>
+  </section>  <!-- ROADMAP (vibes, not promises) -->  <section id="roadmap">
+    <div class="wrap">
+      <h2>Roadmap (vibes, not promises)</h2>
+      <div class="timeline">
+        <div class="step">
+          <h3>Phase 0 — Paper & policy</h3>
+          <p>Publish transparency policy, addresses, and contribution guidelines.</p>
+        </div>
+        <div class="step">
+          <h3>Phase 1 — Tiny experiments</h3>
+          <p>Run opt‑in community experiments (education only). Post results publicly.</p>
+        </div>
+        <div class="step">
+          <h3>Phase 2 — Tools & docs</h3>
+          <p>Simple dashboards for supply, wallets, and change logs. Everything open.</p>
+        </div>
+      </div>
+      <p class="muted">A roadmap is not a contract; items can change or be canceled. We do not publish price targets or profit expectations. Ever.</p>
     </div>
-  </section>
-
-  <!-- FAQ -->
-  <section style="padding:40px 0;background:#f7f9fc;">
-    <div class="container" style="max-width:980px;margin:0 auto;padding:0 20px;">
+  </section>  <!-- COMMUNITY -->  <section id="join" style="background:var(--gold-2)">
+    <div class="wrap">
+      <h2>Join the community</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Discord</h3>
+          <p>Hop in, say hi, and read the transparency rules. <a href="#">Join</a></p>
+        </div>
+        <div class="card">
+          <h3>Updates</h3>
+          <p>Follow change logs and treasury notes. <a href="#">Read updates</a></p>
+        </div>
+        <div class="card">
+          <h3>Contribute</h3>
+          <p>PRs for docs, dashboards, or memes welcome. <a href="#">Get started</a></p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- FAQ + RISKS -->  <section id="faq">
+    <div class="wrap">
       <h2>FAQ</h2>
-      <h3>Is there a roadmap?</h3>
-      <p>Only learning goals and transparency milestones. No revenue or price targets.</p>
-      <h3>Who controls the treasury?</h3>
-      <p>Published multi-sig policy with public logs (to be finalized and posted).</p>
-      <h3>How do I follow updates?</h3>
-      <p>Join the community channel: <a href="#">Discord/Community Link</a>.</p>
+      <h3>Is this an investment?</h3>
+      <p>No. This is a community learning experiment. There is no expectation of profit and no promise of liquidity.</p>
+      <h3>Who runs FruitPie?</h3>
+      <p>A small core team sets transparency rules and publishes addresses/logs. Community ideas are opt‑in and non‑binding.</p>
+      <h3>Where can I read the policies?</h3>
+      <p>See <a href="/disclosures.html">Disclosures</a>, <a href="/terms.html">Terms</a>, and <a href="/privacy.html">Privacy</a>.</p>
     </div>
-  </section>
-</main>
+  </section>  <section id="risks" style="background:#fff7f7">
+    <div class="wrap">
+      <h2>Risks (read first)</h2>
+      <ul class="list">
+        <li>Digital assets are extremely volatile; you can lose 100%.</li>
+        <li>Smart‑contract bugs and chain congestion can cause loss or failed transfers.</li>
+        <li>No exchange listing or liquidity is promised.</li>
+        <li>Regulatory changes may impact access and features.</li>
+      </ul>
+      <p class="muted">Educational content only. Nothing here is financial, legal, or tax advice.</p>
+    </div>
+  </section>  <!-- FOOTER -->  <footer>
+    <div class="wrap">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="coin" aria-hidden="true"><span>FP</span></div>
+          <strong>FruitPie</strong>
+        </div>
+        <nav class="links">
+          <a href="/disclosures.html">Disclosures</a>
+          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+      </div>
+      <p class="fine">© <span id="y"></span> O. M. TEASLEY Holdings. FruitPie is a playful experiment. Not an investment; may go to zero.</p>
+      <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    </div>
+  </footer>
+</body>
+</html>
