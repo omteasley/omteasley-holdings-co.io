@@ -1,81 +1,223 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>O. M. TEASLEY Holdings — Choose Your Path</title>
-
-  <!-- SEO basics -->
-  <meta name="description" content="Choose Investors & Holdings, Loans & Referrals, or FruitPie. O. M. TEASLEY Holdings.">
-  <meta name="theme-color" content="#0B4FA2"/>
-
-  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O. M. TEASLEY Holdings — Investors & Partnerships</title>
+  <meta name="description" content="O. M. TEASLEY Holdings is a diversified investment and management company focused on finance, real estate, and strategic partnerships." />
+  <meta name="theme-color" content="#0B4FA2" />
   <link rel="stylesheet" href="assets/css/styles.css"/>
 
-  <!-- Optional favicon -->
-  <link rel="icon" href="favicon.png"/>
+  <!-- Page-specific styles (aligns with loans.html look/feel) -->
+  <style>
+    /* Header actions */
+    .header-actions { display:flex; gap:10px; align-items:center; }
+    .btn-login {
+      display:inline-block; padding:10px 14px; border-radius:12px; font-weight:800;
+      color:#0B4FA2; background:#fff; border:1.5px solid #CBD6EA;
+      transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
+    }
+    .btn-login:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(11,79,162,.12); background:#F9FBFF; color:#0A3871; }
+
+    .btn-member {
+      display:inline-block; padding:10px 16px; border-radius:12px; font-weight:800; letter-spacing:.2px;
+      color:#fff; background:linear-gradient(135deg,#0B4FA2 0%, #1666C5 100%);
+      border:none; box-shadow:0 10px 22px rgba(11,79,162,.22);
+      transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, opacity .18s ease;
+    }
+    .btn-member:hover { transform:translateY(-2px); box-shadow:0 16px 30px rgba(11,79,162,.28); background:rgba(11,79,162,.85); backdrop-filter:blur(6px); }
+
+    /* Hero adjustments */
+    .hero { position:relative; overflow:hidden; color:#fff;
+      background:radial-gradient(1200px 600px at 80% -10%, rgba(255,255,255,.15), transparent 60%),
+                 linear-gradient(180deg, var(--blue-800), var(--blue-900)); }
+    .hero .wrap { display:grid; grid-template-columns: 1.3fr .7fr; gap:48px; padding:96px 0 }
+    @media (max-width: 980px){ .hero .wrap{grid-template-columns:1fr} }
+    .eyebrow { text-transform:uppercase; letter-spacing:.22em; font-weight:800; font-size:.8rem; opacity:.9 }
+    .h1 { font-size: clamp(32px, 5vw, 56px); line-height:1.1; margin:10px 0 16px; font-weight:800 }
+    .lead { font-size: clamp(16px, 2.2vw, 20px); opacity:.95; max-width:58ch }
+    .hero-cta { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap }
+    .pill-accred {
+      display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.18);
+      color:#fff; border:1px solid rgba(255,255,255,.35); font-weight:800; font-size:.78rem;
+    }
+    .hero-card { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow) }
+    .hero-list{ margin:0; padding-left:18px }
+    .hero-list li{ margin:8px 0 }
+
+    /* Footer cleanup */
+    footer{ background:#0B1220; color:#C7D2FE }
+    footer a{ color:#C7D2FE }
+    .footer-top{ padding:48px 0 }
+    .footer-grid{ display:grid; gap:22px; grid-template-columns: 2fr 1fr 1fr }
+    @media (max-width: 900px){ .footer-grid{ grid-template-columns:1fr } }
+    .fineprint{ font-size:.9rem; color:#A5B4FC }
+  </style>
 </head>
 <body>
-
   <!-- Header -->
-  <header class="site-header">
-    <div class="container nav" style="justify-content:center; text-align:center">
-      <a class="brand" href="index.html" aria-label="Back to start">
-        <div class="brand-badge">OT</div>
-        <div class="brand-name">O. M. TEASLEY Holdings</div>
+  <header>
+    <div class="container nav" style="gap:16px">
+      <a class="brand" href="index.html" aria-label="Back to start" style="display:flex; align-items:center; gap:12px; font-weight:700">
+        <div class="brand-logo" aria-hidden="true" style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, var(--blue-800), var(--blue-700)); display:grid; place-items:center; color:#fff; font-weight:800">OT</div>
+        <div>O. M. TEASLEY Holdings</div>
       </a>
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#focus">Focus</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Top-right actions -->
+      <div class="header-actions">
+        <a class="btn-login" href="login.html">Log In</a>
+        <a class="btn-member" href="membership.html">Become a Member</a>
+      </div>
     </div>
   </header>
 
-  <!-- Main section -->
-  <main>
-    <section class="choice-wrap">
-      <div class="container" style="max-width:860px; text-align:center">
-        <h1 class="section-title">Choose Your Path</h1>
-        <p class="muted" style="margin-bottom:40px">Select an area to explore.</p>
-
-        <div class="grid cols-3">
-          <!-- Investors -->
-          <a class="choice" href="home.html" aria-label="Go to Investors & Holdings">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 13h4v8H3v-8Zm7-4h4v12h-4V9Zm7-6h4v18h-4V3Z" fill="currentColor"/>
-            </svg>
-            <h3 style="margin:12px 0 6px">Investors</h3>
-            <p class="muted" style="font-size:0.92rem">Overview, strategy, and disclosures</p>
-          </a>
-
-          <!-- Loans -->
-          <a class="choice" href="loans.html" aria-label="Go to Loans & Referrals">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3l9 8h-3v9h-4v-6H10v6H6v-9H3l9-8Z" fill="currentColor"/>
-            </svg>
-            <h3 style="margin:12px 0 6px">Loans</h3>
-            <p class="muted" style="font-size:0.92rem">Business, personal, mortgage &amp; more</p>
-          </a>
-
-          <!-- FruitPie -->
-          <a class="choice" href="fruitpie.html" aria-label="Go to FruitPie">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-              <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
-            </svg>
-            <h3 style="margin:12px 0 6px">FruitPie</h3>
-            <p class="muted" style="font-size:0.92rem">Community-driven meme coin</p>
-          </a>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container wrap">
+      <div>
+        <div class="eyebrow">Diversified Investments • Strategic Partnerships</div>
+        <h1 class="h1">Long-term value creation across finance, real estate, and private ventures.</h1>
+        <p class="lead">We invest with discipline, partner with integrity, and operate with transparency. Our mandate is durable growth and aligned incentives for all stakeholders.</p>
+        <div class="hero-cta">
+          <a class="btn-member" href="membership.html">Become a Member</a>
+          <span class="pill-accred" title="Qualified purchaser requirement">For Accredited Investors Only</span>
         </div>
       </div>
-    </section>
-  </main>
+      <aside class="hero-card" aria-label="Highlights">
+        <span class="pill-accred">Accredited Investors</span>
+        <ul class="hero-list">
+          <li>Headquarters: Scottsdale, Arizona</li>
+          <li>Holdings company structure • multi-vertical</li>
+          <li>Operational since 2025</li>
+          <li>Ethics & disclosure first</li>
+        </ul>
+        <div class="space-s"></div>
+        <a class="btn-member" href="membership.html">Become a Member</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Trust row -->
+  <div class="trust" style="background:#fff; border-bottom:1px solid #EEF2FF">
+    <div class="container row">
+      <div class="pill">Aligned with long-term investors</div>
+      <div class="pill">Transparent reporting</div>
+      <div class="pill">Institutional discipline</div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p class="muted" style="max-width:75ch">
+        O. M. TEASLEY Holdings is a diversified investment and management company focused on building long-term value. 
+        Our portfolio spans public and private equity, financial services partnerships, real estate holdings, and venture investments. 
+        We pursue durable strategies, rigorous diligence, and transparent communications.
+      </p>
+    </div>
+  </section>
+
+  <!-- Focus Areas -->
+  <section id="focus" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Core Areas of Focus</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Equity Investments</h3>
+          <p>Public & private markets with disciplined risk management and multi-factor evaluation.</p>
+        </div>
+        <div class="card">
+          <h3>Financial Services Partnerships</h3>
+          <p>Selective partner allocations and co-investment opportunities.</p>
+        </div>
+        <div class="card">
+          <h3>Real Estate Holdings</h3>
+          <p>Residential and commercial assets with an emphasis on cash flow and resilience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- (Former “Referrals”) Membership callout instead -->
+  <section id="membership">
+    <div class="container">
+      <h2 class="section-title">Membership</h2>
+      <p class="muted" style="max-width:75ch">
+        Access investor materials, periodic updates, and opportunities reserved for qualified participants.
+      </p>
+      <div class="space-s"></div>
+      <a class="btn-member" href="membership.html">Become a Member</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:contact@omteasley.com">contact@omteasley.com</a><br/>Headquarters: Scottsdale, Arizona, USA</p>
+          <div class="space-s"></div>
+          <a class="btn-member" href="mailto:contact@omteasley.com">Request a Call</a>
+        </div>
+        <div class="card">
+          <h3>Schedule</h3>
+          <p>Use our booking link to schedule a quick introduction call.</p>
+          <a class="btn-member" href="https://YOUR-CALENDLY-LINK" target="_blank" rel="noopener">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-inner" style="text-align:center">
-      <p class="fineprint">© <span id="y"></span> O. M. TEASLEY Holdings</p>
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="color:#fff; display:flex; align-items:center; gap:12px;">
+            <div class="brand-logo" aria-hidden="true" style="background:linear-gradient(135deg,#0B4FA2,#1666C5)">OT</div>
+            <div>O. M. TEASLEY Holdings</div>
+          </div>
+          <div class="space-s"></div>
+          <p class="fineprint">
+            O. M. TEASLEY Holdings is not a licensed financial advisor, broker-dealer, or investment adviser. 
+            Information provided is for educational and marketing purposes only and should not be considered financial advice.
+          </p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul style="list-style:none; padding:0; margin:8px 0 0">
+            <li><a href="#about">About</a></li>
+            <li><a href="#focus">Focus</a></li>
+            <li><a href="#membership">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul style="list-style:none; padding:0; margin:8px 0 0">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="disclosures.html">Disclosures</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="space-m"></div>
+      <p class="fineprint">© <span id="year"></span> O. M. TEASLEY Holdings. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
